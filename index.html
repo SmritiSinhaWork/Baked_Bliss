@@ -14,7 +14,7 @@
             margin: 0;
             padding-top: 5em;
             overflow: hidden;
-            background-color: burlywood;	
+            background-color: beige;	
         }
 
         nav li {
@@ -32,25 +32,44 @@
         nav li a:hover:not(.active) {
             background-color: lightgrey;
         }
-	.container {
+	    .container {
             max-width:80vw;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            line-height: 4;
-	    padding-top:2em;
+            line-height: 18;
+	        padding-top:2em;
         }
         img {
             height: 18em;
             width: 16em;
-            opacity: 0.8;
             border-radius: 25px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
-        img:hover {
-            opacity: 1;
+        .card1 {
+            position:absolute;
+            top:17em;
         }
-
+        .card2 {
+            position:absolute;
+            top:44em;
+        }
+        .card1,.card2 {
+            height: 10em;
+            width: 16em;
+            border-radius: 25px;
+            background-color: antiquewhite;
+            z-index: -99;
+            transition: transform 1s;
+        }
+        p{
+            line-height: 12;
+            padding-left: 8px;
+            }
+        img:hover + .card1,img:hover + .card2{
+            transform: translate(0px,100px);
+            box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.19);
+        }
     </style>
 </head>
 <body>
@@ -66,14 +85,54 @@
         </ul>
     </nav>
     <div class="container">
-        <div><img src="https://cdn.shopify.com/s/files/1/0024/1152/8253/products/img-cake-9_d25d99c5-842e-4fed-b4ef-bf94d6c1e850_grande.jpg?v=1524322690"></div>
-        <div><img src="https://th.bing.com/th/id/OIP.RlZUlOAxIjH1g_7feYU1QQAAAA?rs=1&pid=ImgDetMain"></div>
-        <div><img src="https://bkmedia.bakingo.com/sq-round-dark-chocolate-valentine-love-cake-cake2572choc-A_2.jpg"></div>
-        <div><img src="https://th.bing.com/th/id/R.f9250f495bdff22868f767266a9f86dd?rik=JAE0YiGGKDjrJg&riu=http%3a%2f%2fhamperlicious.co.za%2fwp-content%2fuploads%2f2018%2f05%2fDark-Chocolate-Lindt-Cake.jpg&ehk=Sqfda5R67Q7ARnLP3HH5toP6HWLksJmZs9c26P%2bc7Fc%3d&risl=&pid=ImgRaw&r=0"></div>
-        <div><img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png"></div>
-        <div><img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png"></div>
-        <div><img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png"></div>
-        <div><img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png"></div>
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0024/1152/8253/products/img-cake-9_d25d99c5-842e-4fed-b4ef-bf94d6c1e850_grande.jpg?v=1524322690">
+            <div class="card1">
+                <p>Black Forest&nbsp;&nbsp;&nbsp;&nbsp;Price: $500</p>
+            </div>
         </div>
+        <div>
+            <img src="https://th.bing.com/th/id/OIP.RlZUlOAxIjH1g_7feYU1QQAAAA?rs=1&pid=ImgDetMain">
+            <div class="card1">
+                <p>Coffee Cake&nbsp;&nbsp;&nbsp;&nbsp;Price: $400</p>
+            </div>
+        </div>
+        <div>
+            <img src="https://bkmedia.bakingo.com/sq-round-dark-chocolate-valentine-love-cake-cake2572choc-A_2.jpg">
+            <div class="card1">
+                <p>Classic Chocolate&nbsp;&nbsp;&nbsp;&nbsp;Price: $200</p>
+            </div>   
+        </div>
+        <div>
+            <img src="https://th.bing.com/th/id/R.f9250f495bdff22868f767266a9f86dd?rik=JAE0YiGGKDjrJg&riu=http%3a%2f%2fhamperlicious.co.za%2fwp-content%2fuploads%2f2018%2f05%2fDark-Chocolate-Lindt-Cake.jpg&ehk=Sqfda5R67Q7ARnLP3HH5toP6HWLksJmZs9c26P%2bc7Fc%3d&risl=&pid=ImgRaw&r=0">
+            <div class="card1">
+                <p>Sponge Cake&nbsp;&nbsp;&nbsp;&nbsp;Price: $200.50</p>
+            </div>  
+        </div>
+        <div>
+            <img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png">
+            <div class="card2">
+                <p>Magestic Brownie&nbsp;&nbsp;&nbsp;&nbsp;Price: $300</p>
+            </div> 
+        </div>
+        <div>
+            <img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png">
+            <div class="card2">
+                <p>Classic Chocolate&nbsp;&nbsp;&nbsp;&nbsp;Price: $200</p>
+            </div> 
+        </div>
+        <div>
+            <img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png">
+            <div class="card2">
+                <p>Birthday Cake&nbsp;&nbsp;&nbsp;&nbsp;Price: $1000</p>
+            </div> 
+        </div>
+        <div>
+            <img src="https://i.pinimg.com/originals/7d/40/84/7d4084dd688c86d627419e754f58017b.png">
+            <div class="card2">
+                <p>Banana Cake&nbsp;&nbsp;&nbsp;&nbsp;Price: $500</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
