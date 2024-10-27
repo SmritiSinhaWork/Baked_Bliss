@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scattered Cards Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .card {
+            position: absolute;
+            width: 18em;
+            height: 24em;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            z-index: 1;
+            cursor: pointer;
+            opacity: 0.9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .profile-picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .post-caption {
+            padding: 10px;
+            font-size: 14px;
+            flex-grow: 1;
+        }
+
+        .post-footer {
+            background-color: #fff;
+            padding: 10px;
+            border-top: 1px solid #e6e6e6;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: #007bff;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            text-decoration: underline;
+        }
+
+        .card:nth-child(1) { top: 25%; left: 10%; transform: rotate(-10deg); }
+        .card:nth-child(2) { top: 15%; left: 52%; transform: rotate(5deg); }
+        .card:nth-child(3) { top: 38%; left: 68%; transform: rotate(-5deg); }
+        .card:nth-child(4) { top: 60%; left: 55%; transform: rotate(10deg); }
+        .card:nth-child(5) { top: 55%; left: 25%; transform: rotate(0deg); }
+        .card:nth-child(6) { top: 15%; left: 30%; transform: rotate(-10deg); }
+
+        .card.active {
+            transform: scale(1.2) rotate(0);
+            z-index: 10;
+            opacity: 1;
+        }
+
+        .card.fade {
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 14em;
+                height: 20em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 12em;
+                height: 18em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="post-header">
+                <img class="profile-picture" src="https://i.pinimg.com/originals/b3/c9/df/b3c9dfa78c7a93bbd84f9c8fcbcc2a0e.jpg" alt="Profile Picture">
+                <span class="username">Ethan Reynolds</span>
+            </div>
+            <img class="post-image" src="https://cdn.shopify.com/s/files/1/0024/1152/8253/products/img-cake-9_d25d99c5-842e-4fed-b4ef-bf94d6c1e850_grande.jpg?v=1524322690" alt="Post Image">
+            <div class="post-caption">Delicious Chocolate Cake! 🍫 #chocolate #dessert</div>
+            <div class="post-footer">
+                <button class="button">Like</button>
+                <button class="button">Comment</button>
+                <button class="button">Share</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="post-header">
+                <img class="profile-picture" src="https://petapixel.com/assets/uploads/2019/02/download-4.jpeg" alt="Profile Picture">
+                <span class="username">Alex Taylor</span>
+            </div>
+            <img class="post-image" src="https://th.bing.com/th/id/OIP.RlZUlOAxIjH1g_7feYU1QQAAAA?rs=1&pid=ImgDetMain" alt="Post Image">
+            <div class="post-caption">Coffee Cake is the best! ☕ #coffee #cake</div>
+            <div class="post-footer">
+                <button class="button">Like</button>
+                <button class="button">Comment</button>
+                <button class="button">Share</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="post-header">
+                <img class="profile-picture" src="https://i.pinimg.com/originals/0f/3c/3c/0f3c3c76a16f10d43bf0b0c144cea281.png" alt="Profile Picture">
+                <span class="username">Riley Morgan</span>
+            </div>
+            <img class="post-image" src="https://bkmedia.bakingo.com/sq-round-dark-chocolate-valentine-love-cake-cake2572choc-A_2.jpg" alt="Post Image">
+            <div class="post-caption">Classic Chocolate for a reason! 🍰 #chocolate</div>
+            <div class="post-footer">
+                <button class="button">Like</button>
+                <button class="button">Comment</button>
+                <button class="button">Share</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="post-header">
+                <img class="profile-picture" src="https://th.bing.com/th/id/OIP.vhOC9CpSxAKXcO9mgJitbgHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture">
+                <span class="username">Avery Jordan</span>
+            </div>
+            <img class="post-image" src="https://th.bing.com/th/id/R.f9250f495bdff22868f767266a9f86dd?rik=JAE0YiGGKDjrJg&riu=http%3a%2f%2fhamperlicious.co.za%2fwp-content%2fuploads%2f2018%2f05%2fDark-Chocolate-Lindt-Cake.jpg&ehk=Sqfda5R67Q7ARnLP3HH5toP6HWLksJmZs9c26P%2bc7Fc%3d&risl=&pid=ImgRaw&r=0" alt="Post Image">
+            <div class="post-caption">Indulge in this dark chocolate cake! 🍫 #darkchocolate</div>
+            <div class="post-footer">
+                <button class="button">Like</button>
+                <button class="button">Comment</button>
+                <button class="button">Share</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="post-header">
+                <img class="profile-picture" src="https://th.bing.com/th/id/OIP.oj5TDjSW09HGKrx1MgzHCwHaHa?rs=1&pid=ImgDetMain" alt="Profile Picture">
+                <span class="username">Taylor Quinn</span>
+            </div>
+            <img class="post-image" src="https://th.bing.com/th/id/OIP.q6eInpgQVlnAXO2jjAkOrgAAAA?rs=1&pid=ImgDetMain" alt="Post Image">
+            <div class="post-caption">Strawberry delight for everyone! 🍓 #strawberry</div>
+            <div class="post-footer">
+                <button class="button">Like</button>
+                <button class="button">Comment</button>
+                <button class="button">Share</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="post-header">
+                <img class="profile-picture" src="https://th.bing.com/th/id/OIP.Wo2IYVIGXN-t5Q_ySOqIrQHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Profile Picture">
+                <span class="username">Isabella Martinez</span>
+            </div>
+            <img class="post-image" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Pumpkin-Torte_EXPS_SDON17_28516_B06_28_5b-1.jpg?resize=350" alt="Post Image">
+            <div class="post-caption">Vanilla cake for the win! 🎂 #vanilla</div>
+            <div class="post-footer">
+                <button class="button">Like</button>
+                <button class="button">Comment</button>
+                <button class="button">Share</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        let activeCard = null;
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                if (activeCard && activeCard !== card) {
+                    return;
+                }
+
+                card.classList.toggle('active');
+                activeCard = card.classList.contains('active') ? card : null;
+
+                cards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.toggle('fade', card.classList.contains('active'));
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
