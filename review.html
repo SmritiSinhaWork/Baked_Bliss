@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scattered Cards Gallery</title>
+    <title>Review</title>
     <style>
         * {
             margin: 0;
@@ -17,8 +17,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f4f4f4;
-            overflow: hidden;
+            background-color: beige;
         }
 
         .container {
@@ -119,6 +118,19 @@
                 height: 18em;
             }
         }
+        @media (max-width: 400px) and (max-height: 850px) {
+            .card {
+                width: 12em;
+                height: 20em;
+            }
+
+            .card:nth-child(1) { display: none; }
+            .card:nth-child(2) { top: 10%; left: 30%; transform: rotate(5deg); }
+            .card:nth-child(3) { top: 40%; left: 15%; transform: rotate(-5deg); }
+            .card:nth-child(4) { top: 80%; left: 25%; transform: rotate(10deg); }
+            .card:nth-child(5) { top: 110%; left: 20%; transform: rotate(-5deg); }
+            .card:nth-child(6) { top: 140%; left: 20%; transform: rotate(10deg); }
+        }
     </style>
 </head>
 <body>
@@ -171,7 +183,7 @@
                 <span class="username">Avery Jordan</span>
             </div>
             <img class="post-image" src="https://th.bing.com/th/id/R.f9250f495bdff22868f767266a9f86dd?rik=JAE0YiGGKDjrJg&riu=http%3a%2f%2fhamperlicious.co.za%2fwp-content%2fuploads%2f2018%2f05%2fDark-Chocolate-Lindt-Cake.jpg&ehk=Sqfda5R67Q7ARnLP3HH5toP6HWLksJmZs9c26P%2bc7Fc%3d&risl=&pid=ImgRaw&r=0" alt="Post Image">
-            <div class="post-caption">Indulge in this dark chocolate cake! 🍫 #darkchocolate</div>
+            <div class="post-caption">Indulge in this dark chocolate cake! 🍫</div>
             <div class="post-footer">
                 <button class="button">Like</button>
                 <button class="button">Comment</button>
