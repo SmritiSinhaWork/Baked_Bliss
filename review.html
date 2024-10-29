@@ -105,6 +105,39 @@
             opacity: 0.3;
         }
 
+        .color-blind-mode * {
+            color: black !important;
+        }
+
+        .color-blind-mode a {
+            color: blue !important;
+            text-decoration: none;
+        }
+
+        .color-blind-mode a:hover {
+            text-decoration: underline;
+        }
+
+        /* Color Blind Mode Toggle Button */
+        .color-blind-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .color-blind-toggle:hover {
+            background-color: #0056b3;
+        }
+
         @media (max-width: 768px) {
             .card {
                 width: 14em;
@@ -219,7 +252,7 @@
             </div>
         </div>
     </div>
-
+    <button class="color-blind-toggle" onclick="toggleColorBlindMode()">Color Blind Mode</button>
     <script>
         const cards = document.querySelectorAll('.card');
         let activeCard = null;
@@ -240,6 +273,9 @@
                 });
             });
         });
+        function toggleColorBlindMode() {
+            document.body.classList.toggle("color-blind-mode");
+        }
     </script>
 </body>
 </html>
