@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cake Gallery</title>
+    <title>Responsive Cake Gallery</title>
     <style>
         * {
             margin: 0;
@@ -69,7 +69,9 @@
             align-items: center;
             justify-content: center;
             background-color: antiquewhite;
+            color: #7B3F00;
             z-index: 0;
+            font-family: 'Times New Roman', Times, serif;
             transform: translateY(-100%);
             transition: transform 0.5s ease;
         }
@@ -89,16 +91,42 @@
             transform: translateY(0);
         }
 
+        .color-blind-mode img {
+            filter: grayscale(100%);
+        }
+        .color-blind-mode .card{
+            background-color: whitesmoke;
+        }
+
+        .color-blind-mode * {
+            color: black !important;
+        }
+
+        .color-blind-mode a:hover {
+            text-decoration: underline;
+        }
+
+        /* Color Blind Mode Toggle Button */
+        .color-blind-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .color-blind-toggle:hover {
+            transform: scale(1.3);
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
                 align-items: center;
             }
 
-            img {
-                height: 14em;
-                width: 14em;
-            }
+            
 
             .card {
                 font-size: 0.9em;
@@ -168,5 +196,11 @@
             </div>
         </div>
     </div>
+    <button class="color-blind-toggle" onclick="toggleColorBlindMode()"><img width="1rem" height="1rem" src="https://img.icons8.com/ios-filled/50/blind.png" alt="blind"/></button>
+    <script>
+        function toggleColorBlindMode() {
+            document.body.classList.toggle("color-blind-mode");
+        }
+    </script>
 </body>
 </html>
